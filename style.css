@@ -1,0 +1,129 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+    /* Paleta Tardia / Pôr do Sol no Estádio */
+    --cor-fundo: #FAFAFB;             /* Branco suave/suavemente acinzentado */
+    --cor-superficie: #FFFFFF;        /* Branco puro para cartões/artigos */
+    --cor-texto-principal: #2B2D42;   /* Azul-escuro quase preto (alta legibilidade) */
+    --cor-texto-suave: #5C677D;       /* Cinza-azulado para subtextos */
+    
+    /* Cores Temáticas do Brasil (Tons Tardios/Mapeados) */
+    --verde-profundo: #1B4332;       /* Verde-escuro elegante para o cabeçalho */
+    --amarelo-tardio: #E9C46A;       /* Amarelo suave / Ouro queimado */
+    --laranja-por-do-sol: #E76F51;    /* Terracota / Laranja entardecer para destaques */
+    --azul-noite: #1D3557;           /* Azul profundo para links e detalhes */
+    --linha-divisoria: #E0E1DD;      /* Cinza claro para bordas */
+}
+
+/* Reset básico e box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO (HEADER)
+   ========================================================================== */
+header {
+    background-color: var(--verde-profundo);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    border-bottom: 5px solid var(--amarelo-tardio);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--amarelo-tardio);
+    letter-spacing: -0.5px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #E0E1DD;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL (MAIN & ARTICLES)
+   ========================================================================== */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+article {
+    background-color: var(--cor-superficie);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border-left: 4px solid var(--laranja-por-do-sol);
+}
+
+article h2 {
+    font-size: 1.75rem;
+    color: var(--azul-noite);
+    margin-bottom: 1rem;
+}
+
+article p {
+    margin-bottom: 1rem;
+    color: var(--cor-texto-principal);
+    font-size: 1.05rem;
+}
+
+article p:last-child {
+    margin-bottom: 0;
+}
+
+/* Listas */
+article ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+article li {
+    margin-bottom: 0.75rem;
+    color: var(--cor-texto-principal);
+}
+
+article li strong {
+    color: var(--verde-profundo);
+}
+
+/* Estilização das linhas divisórias (<hr>) */
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--linha-divisoria);
+    margin: 2rem 0;
+}
+
+/* ==========================================================================
+   4. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--linha-divisoria);
+    max-width: 800px;
+    margin: 0 auto;
+}
