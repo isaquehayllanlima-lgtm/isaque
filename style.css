@@ -1,129 +1,215 @@
-/* ==========================================================================
-   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES GERAIS
-   ========================================================================== */
+/* Varíaveis de Cor e Efeitos */
 :root {
-    /* Paleta Tardia / Pôr do Sol no Estádio */
-    --cor-fundo: #FAFAFB;             /* Branco suave/suavemente acinzentado */
-    --cor-superficie: #FFFFFF;        /* Branco puro para cartões/artigos */
-    --cor-texto-principal: #2B2D42;   /* Azul-escuro quase preto (alta legibilidade) */
-    --cor-texto-suave: #5C677D;       /* Cinza-azulado para subtextos */
-    
-    /* Cores Temáticas do Brasil (Tons Tardios/Mapeados) */
-    --verde-profundo: #1B4332;       /* Verde-escuro elegante para o cabeçalho */
-    --amarelo-tardio: #E9C46A;       /* Amarelo suave / Ouro queimado */
-    --laranja-por-do-sol: #E76F51;    /* Terracota / Laranja entardecer para destaques */
-    --azul-noite: #1D3557;           /* Azul profundo para links e detalhes */
-    --linha-divisoria: #E0E1DD;      /* Cinza claro para bordas */
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --accent-color: #009c3b; /* Verde Brasil */
+  --accent-yellow: #ffdf00; /* Amarelo Brasil */
+  --border-color: #e2e8f0;
+  --card-shadow-color: rgba(0, 0, 0, 0.08);
+  --header-shadow-color: rgba(0, 0, 0, 0.05);
+  --like-btn-bg: #f1f5f9;
+  --like-btn-active: #ffe4e6;
+  --like-btn-text: #e11d48;
 }
 
-/* Reset básico e box-sizing */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Tema Escuro */
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --card-shadow-color: rgba(0, 0, 0, 0.4);
+  --header-shadow-color: rgba(0, 0, 0, 0.3);
+  --like-btn-bg: #334155;
+  --like-btn-active: #4c0519;
+  --like-btn-text: #fb7185;
+}
+
+/* Transição Suave Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto-principal);
-    line-height: 1.6;
-    padding-bottom: 40px;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
-/* ==========================================================================
-   2. CABEÇALHO (HEADER)
-   ========================================================================== */
+/* Sombras Específicas */
+.header-shadow {
+  box-shadow: 0 4px 20px var(--header-shadow-color);
+}
+
+.card-shadow {
+  box-shadow: 0 10px 25px var(--card-shadow-color);
+}
+
+.footer-shadow {
+  box-shadow: 0 -4px 20px var(--header-shadow-color);
+}
+
+/* Header */
 header {
-    background-color: var(--verde-profundo);
-    color: #FFFFFF;
-    text-align: center;
-    padding: 3rem 1.5rem;
-    border-bottom: 5px solid var(--amarelo-tardio);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: var(--card-bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
-header h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    color: var(--amarelo-tardio);
-    letter-spacing: -0.5px;
+.header-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header p {
-    font-size: 1.1rem;
-    color: #E0E1DD;
-    max-width: 600px;
-    margin: 0 auto;
+.brand h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 
-/* ==========================================================================
-   3. CONTEÚDO PRINCIPAL (MAIN & ARTICLES)
-   ========================================================================== */
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+.brand h1 span {
+  color: var(--accent-color);
 }
 
-article {
-    background-color: var(--cor-superficie);
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    border-left: 4px solid var(--laranja-por-do-sol);
+.brand p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
 }
 
-article h2 {
-    font-size: 1.75rem;
-    color: var(--azul-noite);
-    margin-bottom: 1rem;
+/* Botão Tema Escuro */
+.btn-theme {
+  background-color: var(--like-btn-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-article p {
-    margin-bottom: 1rem;
-    color: var(--cor-texto-principal);
-    font-size: 1.05rem;
+.btn-theme:hover {
+  transform: translateY(-2px);
 }
 
-article p:last-child {
-    margin-bottom: 0;
+/* Main Container */
+.main-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* Listas */
-article ul {
-    margin-top: 1rem;
-    padding-left: 1.5rem;
+/* Cartão do Post */
+.post-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
 }
 
-article li {
-    margin-bottom: 0.75rem;
-    color: var(--cor-texto-principal);
+.post-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
 }
 
-article li strong {
-    color: var(--verde-profundo);
+.post-content {
+  padding: 1.5rem;
 }
 
-/* Estilização das linhas divisórias (<hr>) */
-hr {
-    border: none;
-    height: 1px;
-    background-color: var(--linha-divisoria);
-    margin: 2rem 0;
+.post-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
-/* ==========================================================================
-   4. RODAPÉ (FOOTER)
-   ========================================================================== */
+.post-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.challenge-list {
+  margin: 1rem 0 1.5rem 1.2rem;
+  color: var(--text-secondary);
+}
+
+.challenge-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links de Fontes */
+.post-sources {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-color);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.post-sources a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 0.3rem;
+}
+
+.post-sources a:hover {
+  text-decoration: underline;
+}
+
+/* Botão de Curtir */
+.post-actions {
+  margin-top: 1rem;
+}
+
+.like-btn {
+  background-color: var(--like-btn-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.like-btn:hover {
+  transform: scale(1.03);
+}
+
+.like-btn.liked {
+  background-color: var(--like-btn-active);
+  color: var(--like-btn-text);
+  border-color: var(--like-btn-text);
+}
+
+/* Footer */
 footer {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    color: var(--cor-texto-suave);
-    font-size: 0.9rem;
-    border-top: 1px solid var(--linha-divisoria);
-    max-width: 800px;
-    margin: 0 auto;
+  background-color: var(--card-bg);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }

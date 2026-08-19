@@ -1,50 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Brasil na Copa 2026 | Blog de Futebol</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Brasil na Copa 2026 | Blog de Futebol</title>
+  <!-- Fonte Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-   <header>
-    <h1>O Brasil na Copa 2026</h1>
-    <p>Acompanhe a jornada do futebol brasileiro rumo ao hexacampeonato mundial.</p>
-   </header>
+  <header class="header-shadow">
+    <div class="header-container">
+      <div class="brand">
+        <h1>Brasil na Copa <span>2026</span></h1>
+        <p>A jornada rumo ao hexacampeonato mundial</p>
+      </div>
+      <button id="theme-toggle" class="btn-theme" aria-label="Alternar tema">
+        <span id="theme-icon">🌙</span> Modos
+      </button>
+    </div>
+  </header>
 
-   <hr>
-
-   <main>
-    <article>
+  <main class="main-container">
+    <article class="post-card card-shadow">
+      <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80" alt="Estádio de futebol iluminado" class="post-image">
+      
+      <div class="post-content">
         <h2>A Preparação do Brasil para a Copa de 2026</h2>
         <p>
-            A Copa do Mundo de 2026 promete ser uma das edições mais históricas de todos os tempos. Sediada conjuntamente por Estados Unidos, Canadá e México, a competição contará pela primeira vez com 48 seleções participantes. Para o Brasil, o torneio representa não apenas a busca pelo tão sonhado hexacampeonato, mas também a consolidação de uma nova geração de talentos no cenário internacional.
+          A Copa do Mundo de 2026 promete ser uma das edições mais históricas de todos os tempos. Sediada conjuntamente por Estados Unidos, Canadá e México, a competição contará pela primeira vez com 48 seleções participantes. Para o Brasil, o torneio representa não apenas a busca pelo tão sonhado hexacampeonato, mas também a consolidação de uma nova geração de talentos no cenário internacional.
         </p>
         <p>
-            Sob o comando da comissão técnica, a Seleção Brasileira vem reformulando seu estilo de jogo, unindo a velocidade dos jovens pontas à experiência de atletas veteranos. A expectativa dos torcedores está no nível mais alto, especialmente com o desempenho de destaque dos jogadores brasileiros nas principais ligas europeias e no futebol nacional.
+          Sob o comando da comissão técnica, a Seleção Brasileira vem reformulando seu estilo de jogo, unindo a velocidade dos jovens pontas à experiência de atletas veteranos. A expectativa dos torcedores está no nível mais alto.
         </p>
+
+        <!-- Seção de Fontes -->
+        <div class="post-sources">
+          <span>Fonte da informação:</span>
+          <a href="https://www.fifa.com" target="_blank" rel="noopener noreferrer">Site Oficial da FIFA ↗</a>
+        </div>
+
+        <!-- Botão de Curtida -->
+        <div class="post-actions">
+          <button class="like-btn" id="like-btn-1" onclick="toggleLike('like-btn-1', 'like-count-1')">
+            <span class="heart-icon">❤️</span> 
+            <span class="like-text">Curtir</span> 
+            (<span id="like-count-1">128</span>)
+          </button>
+        </div>
+      </div>
     </article>
 
-    <hr>
-
-    <article>
+    <article class="post-card card-shadow">
+      <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80" alt="Bola de futebol em campo de grama" class="post-image">
+      
+      <div class="post-content">
         <h2>Os Principais Desafios no Caminho do Hexa</h2>
         <p>
-            O caminho até a taça exige consistência tática e preparo físico. Com o novo formato do torneio, as equipes precisarão disputar uma fase de mata-mata adicional (16 avos de final), o que aumenta o número total de partidas para chegar ao título.
+          O caminho até a taça exige consistência tática e preparo físico. Com o novo formato do torneio, as equipes precisarão disputar uma fase de mata-mata adicional (16 avos de final), o que aumenta o número total de partidas para chegar ao título.
         </p>
-        <ul>
-            <li><strong>Adaptação ao Clima e Logística:</strong> Grandes deslocamentos entre os três países sedes.</li>
-            <li><strong>Renovação Tática:</strong> Equilíbrio entre a intensidade defensiva e a criatividade ofensiva.</li>
-            <li><strong>Concorrência Acirrada:</strong> Adversários tradicionais da Europa e da América do Sul em alta performance.</li>
+        
+        <ul class="challenge-list">
+          <li><strong>Adaptação ao Clima e Logística:</strong> Grandes deslocamentos entre os três países sedes.</li>
+          <li><strong>Renovação Tática:</strong> Equilíbrio entre a intensidade defensiva e a criatividade ofensiva.</li>
+          <li><strong>Concorrência Acirrada:</strong> Adversários tradicionais da Europa e da América do Sul em alta performance.</li>
         </ul>
+
+        <!-- Seção de Fontes -->
+        <div class="post-sources">
+          <span>Fonte da informação:</span>
+          <a href="https://www.cbf.com.br" target="_blank" rel="noopener noreferrer">Confederação Brasileira de Futebol (CBF) ↗</a>
+        </div>
+
+        <!-- Botão de Curtida -->
+        <div class="post-actions">
+          <button class="like-btn" id="like-btn-2" onclick="toggleLike('like-btn-2', 'like-count-2')">
+            <span class="heart-icon">❤️</span> 
+            <span class="like-text">Curtir</span> 
+            (<span id="like-count-2">95</span>)
+          </button>
+        </div>
+      </div>
     </article>
-   </main> 
+  </main>
 
-   <hr>
-
-   <footer>
+  <footer class="footer-shadow">
     <p>&copy; 2026 Blog O Brasil na Copa - Todos os direitos reservados.</p>
-   </footer>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
